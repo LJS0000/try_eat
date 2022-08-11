@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CommonHeader from "../components/CommonHeader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./signup.css";
 
 const SignUp = () => {
@@ -54,7 +54,7 @@ const SignUp = () => {
           console.log(res);
           
           if (res.response.data === "Email already exists") {
-            alert("가입된 이메일이 있습니다.");
+            alert("해당 이메일로 가입된 계정이 있습니다.");
             return;
           }
 
@@ -120,6 +120,11 @@ const SignUp = () => {
         <button className={"btn"} onClick={onRegistHandler}>
           회원가입하기
         </button>
+        
+        <h3 style={{ margin: "10px", textAlign: "right" }}>
+          가입된 계정이 있으시다면 &nbsp;
+          <Link to={"/login"}>로그인</Link>
+        </h3>
       </div>
     </div>
   );
