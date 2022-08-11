@@ -4,6 +4,7 @@ h1, h2, h3, h4, h5, h6,
 label, button, input,
 span {
     font-weight: 500;
+    /* font-family: 'Black Han Sans', sans-serif; */
 }
 
 .auth-wrapper {
@@ -16,6 +17,17 @@ span {
     font-weight: 400;
 }
 
+.header {
+    width: auto;
+    background: #ffffff;
+    border-radius: 15px;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
 .auth-inner {
     width: auto;
     margin: 20px;
@@ -23,6 +35,8 @@ span {
     padding: 40px 55px 45px 55px;
     border-radius: 15px;
     transition: all 0.3s;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .auth-inner input {

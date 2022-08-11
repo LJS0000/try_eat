@@ -3,6 +3,8 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import CommonHeader from "../components/CommonHeader";
 import "./signup.css"
+import logo700 from '../src_assets/logo700.png' 
+import styled from "styled-components";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -59,22 +61,61 @@ const Login = () => {
   }
 
   return (
-    <div className={"auth-wrapper"}>
+<div className={"auth-wrapper"}>
+      <div className="header">
+        <div>
+          <StLogoImg />
+        </div>
+        <h1> 잡솨봐 </h1>
+        <h3> Try Eat </h3>
+        <br></br>
+      </div>
+
       <div className="auth-inner">
-      <h1>로그인</h1>
-      <div>
-        <input name={"email"} value={email} type="text" onChange={onChange} placeholder={"이메일"}/>
-      </div>
-      <div>
-        <input name={"password"} value={password} type="text" onChange={onChange} placeholder={"비밀번호"}/>
-      </div>
-      <button className={"btn2"} onClick={onLoginHandler}>로그인</button>
-      <button className={"btn2"} onClick={()=> {
-        navigate("/signup")
-      }}>회원가입</button>
+        <div>
+          <input
+            name={"email"}
+            value={email}
+            type="text"
+            onChange={onChange}
+            placeholder={"이메일"}
+          />
+        </div>
+
+        <div>
+          <input
+            name={"password"}
+            value={password}
+            type="text"
+            onChange={onChange}
+            placeholder={"비밀번호"}
+          />
+        </div>
+
+        <button className={"btn2"} onClick={onLoginHandler}>
+          로그인
+        </button>
+
+        <button
+          className={"btn2"}
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          회원가입
+        </button>
       </div>
     </div>
   )
 }
 
 export default Login
+
+const StLogoImg = styled.div`
+  background-image: url(${logo700});
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+`
